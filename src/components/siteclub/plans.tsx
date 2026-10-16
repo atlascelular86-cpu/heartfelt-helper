@@ -1,0 +1,6 @@
+import { Link } from '@tanstack/react-router';
+import { ArrowUpRight, Check, Layers, LayoutTemplate, Code2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { plans } from '@/lib/siteclub';
+import { cn } from '@/lib/utils';
+export function PlanGrid() { const icons = [LayoutTemplate, Layers, Code2]; return <div className="plans-grid">{plans.map((plan, i) => { const Icon = icons[i]; return <article key={plan.id} className={cn('plan-card', plan.id === 'company' && 'plan-featured')}><div className="plan-top">{Icon && <Icon className="plan-icon"/>}{plan.id === 'company' && <span className="plan-tag">PRESENÇA COMPLETA</span>}</div><h3>{plan.name}</h3><p>{plan.label}</p><div className="price">{plan.id === 'system' && <small>A partir de</small>}<span>R$ <strong>{plan.price.toFixed(2).replace('.', ',')}</strong><em>/mês</em></span></div><Button asChild variant={plan.id === 'company' ? 'default' : 'outline'} className={cn('plan-button', plan.id === 'company' && 'button-3d')}><Link to="/contato" search={{ plano: plan.id }}>Quero este plano<ArrowUpRight/></Link></Button><ul>{plan.features.map(feature => <li key={feature}><Check/>{feature}</li>)}</ul>{plan.id === 'system' && <p className="plan-note">Valor final definido conforme a complexidade do sistema.</p>}</article>; })}</div>; }
