@@ -195,6 +195,9 @@ body { font-family: var(--font-sans); } h1,h2,h3,.brand { font-family: var(--fon
 .testimonial-controls {display:flex;align-items:center;gap:12px;}
 .testimonial-controls>span {margin-left:auto;font-size:11px;}
 .testimonial-navigation {display:flex;justify-content:flex-end;gap:8px;margin-top:18px;}
+.service-video-section {padding-block:58px;border-bottom:1px solid var(--border);}
+.service-video {display:block;width:100%;max-width:960px;aspect-ratio:16/9;object-fit:contain;margin-inline:auto;background:var(--hero-shade);border:1px solid var(--border);border-radius:8px;}
+@media(max-width:700px){.service-video-section{padding-block:38px;}}
 @media(max-width:700px){.plan-card .plan-description{min-height:0;}.testimonial-content blockquote{min-height:130px;}.delivery-promise{font-size:12px;}.hero-copy{padding-bottom:46px;}}
 @media(prefers-reduced-motion:reduce){.button-3d:hover,.button-3d:focus-visible,.button-3d:active,.button-3d:hover svg,.button-3d:focus-visible svg{transform:none;}}
 .hero-price {display:flex;gap:24px;align-items:center;margin-top:25px;font-size:11px;color:var(--muted-foreground);}

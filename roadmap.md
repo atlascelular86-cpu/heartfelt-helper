@@ -5,3 +5,4 @@
 - [ ] Highlight website delivery within 3 days, expand plan descriptions and enhance 3D button reactions.
 - [ ] Improve carousel controls and verify pages and pricing rules.
 - [ ] Add approximately 15 real testimonials — blocked on authorized customer names and accounts from the user.
+- [ ] Add the uploaded explanatory video to the homepage and verify playback.
