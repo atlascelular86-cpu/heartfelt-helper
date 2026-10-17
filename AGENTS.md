@@ -11,4 +11,4 @@
 
 - Siteclub presentation uses shared shell, pricing and intake components with leaf route metadata; this keeps navigation and plans consistent.
 - Company intake uses validated public insert-only server functions and private storage; visitors must never read requests or uploaded files.
-- Prices and contact destinations live in the shared business module so UI and rule tests use the same values.
+- Prices, website delivery limits and contact destinations live in the shared business module so UI and rule tests use the same values.

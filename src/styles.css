@@ -156,6 +156,7 @@
  --button-edge: oklch(0.42 0.18 257); --button-highlight: oklch(0.77 0.14 236);
  --hero-shade: oklch(0.11 0.004 260); --success: oklch(0.77 0.15 160);
  --button-shadow: 0 4px 0 var(--button-edge), 0 9px 24px color-mix(in oklch, var(--primary) 18%, transparent);
+ --button-hover-shadow: 0 7px 0 var(--button-edge), 0 16px 30px color-mix(in oklch, var(--primary) 30%, transparent);
 }
 @theme inline { --font-sans: 'Manrope', sans-serif; --font-display: 'Sora', sans-serif; }
 body { font-family: var(--font-sans); } h1,h2,h3,.brand { font-family: var(--font-display); letter-spacing: 0; } a,button,input,textarea,select { -webkit-tap-highlight-color: transparent; }
@@ -178,7 +179,24 @@ body { font-family: var(--font-sans); } h1,h2,h3,.brand { font-family: var(--fon
 .hero-copy>p {max-width:455px;font-size:15px;line-height:1.9;color:var(--muted-foreground);}
 .hero-actions {display:flex;gap:14px;align-items:center;margin-top:29px;}
 .button-3d {border:1px solid var(--button-highlight);box-shadow:var(--button-shadow);min-height:46px;transition:transform .2s,box-shadow .2s; font-size:13px;}
-.button-3d:hover {transform:translateY(-2px);} .button-3d:active {transform:translateY(3px);box-shadow:none;}
+.button-3d:hover,.button-3d:focus-visible {transform:translateY(-3px);box-shadow:var(--button-hover-shadow);}
+.button-3d svg {transition:transform .2s;flex-shrink:0;}
+.button-3d:hover svg,.button-3d:focus-visible svg {transform:translate(2px,-2px);}
+.button-3d:active {transform:translateY(4px);box-shadow:none;}
+.button-3d-outline {--button-edge:var(--border);--button-highlight:var(--border);}
+.delivery-promise {display:flex;align-items:center;gap:9px;color:var(--success);font-size:13px;line-height:1.6;margin-top:20px;}
+.delivery-promise svg {width:19px;height:19px;flex-shrink:0;}
+.plan-card {display:flex;flex-direction:column;}
+.plan-card .plan-description {min-height:88px;font-size:12px;line-height:1.85;}
+.plan-card .plan-audience {margin-top:22px;font-size:11px;border-top:1px solid var(--border);padding-top:17px;}
+.plan-card .delivery-promise {font-size:11px;margin-top:16px;}
+.plan-card .plan-note {margin-top:16px;}
+.testimonial-content {position:relative;min-width:0;}
+.testimonial-controls {display:flex;align-items:center;gap:12px;}
+.testimonial-controls>span {margin-left:auto;font-size:11px;}
+.testimonial-navigation {display:flex;justify-content:flex-end;gap:8px;margin-top:18px;}
+@media(max-width:700px){.plan-card .plan-description{min-height:0;}.testimonial-content blockquote{min-height:130px;}.delivery-promise{font-size:12px;}.hero-copy{padding-bottom:46px;}}
+@media(prefers-reduced-motion:reduce){.button-3d:hover,.button-3d:focus-visible,.button-3d:active,.button-3d:hover svg,.button-3d:focus-visible svg{transform:none;}}
 .hero-price {display:flex;gap:24px;align-items:center;margin-top:25px;font-size:11px;color:var(--muted-foreground);}
 .hero-price strong {color:var(--foreground);font-size:13px;font-weight:700;}.hero-price>span:last-child {display:flex;align-items:center;gap:5px;}.hero-price svg{width:13px;color:var(--success);}
 .hero-caption {position:absolute;right:5px;bottom:30px;display:flex;gap:12px;font-size:8px;letter-spacing:1.7px;color:var(--muted-foreground);}
